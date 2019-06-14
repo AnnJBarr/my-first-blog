@@ -8,14 +8,13 @@
             <p>Hi there, this is a little blog about random things which I make!</p>
         </div>
 
-        <div>
-            <h2>My first post</h2>
-            <p>Baking - lots of baking that I do but see separate post for brownies</p>
-        </div>
-
-        <div>
-            <h2>My second post</h2>
-            <p>Bunting pictures</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><ahref="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+       
     </body>
 </html>
